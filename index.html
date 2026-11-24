@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdimalik | Civil Engineer</title>
+<meta name="description" content="Portfolio of a civil engineer: projects, designs, certificates and tools.">
+<meta name="theme-color" content="#221A13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#221A13;--bg2:#2B2118;--bg3:#34281D;--line:#4B3B2B;
+  --text:#F2E8D8;--muted:#B7A386;--tan:#D2B48C;--tan2:#E6CFA9;--ink:#221A13;
+  --danger:#E8907F;--ok:#A6C793;
+  --display:'Big Shoulders Display','Oswald','Arial Narrow',Impact,sans-serif;
+  --body:'Public Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+html.lock{overflow:hidden}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--tan);outline-offset:2px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+.btn{font:600 .95rem/1 var(--body);padding:.85rem 1.3rem;border-radius:10px;border:1.5px solid var(--tan);background:transparent;color:var(--tan2);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;white-space:nowrap}
+.btn:hover{background:rgba(210,180,140,.14)}
+.btn.pri{background:var(--tan);color:var(--ink);border-color:var(--tan)}
+.btn.pri:hover{background:var(--tan2)}
+.btn.sm{padding:.5rem .8rem;font-size:.85rem;border-radius:8px}
+.btn.danger{color:var(--danger);border-color:var(--danger)}
+.btn.danger:hover{background:rgba(232,144,127,.14)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(34,26,19,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font:800 1.6rem/1 var(--display);text-decoration:none;letter-spacing:.01em}
+.nav nav{display:flex;gap:1.5rem}
+.nav nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted)}
+.nav nav a:hover{color:var(--text)}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 62px);display:flex;flex-direction:column;justify-content:center;padding:4rem 0 6.5rem;background:radial-gradient(900px 500px at 85% 0%,rgba(210,180,140,.10),transparent 70%)}
+.hero-grid{display:grid;gap:3rem;grid-template-columns:minmax(0,1fr);align-items:center}
+@media (min-width:980px){.hero-grid.has-photo{grid-template-columns:minmax(0,1fr) 320px}}
+.badge{display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.5rem;padding:.42rem 1rem;border:1.5px solid var(--line);border-radius:999px;font-weight:500;font-size:.9rem;background:var(--bg2)}
+.badge b{color:var(--tan);font-weight:400}
+h1{margin:0;font:900 clamp(4.4rem,15vw,11.5rem)/.86 var(--display);letter-spacing:-.005em}
+h1 span{display:block;white-space:nowrap}
+.has-photo h1{font-size:clamp(4rem,11vw,9rem)}
+.bar{display:inline-block;width:.5em;height:.1em;background:var(--tan);margin-left:.1em;transform-origin:left center;animation:draw .8s .25s cubic-bezier(.2,.7,.2,1) both}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tag{max-width:54ch;margin:1.75rem 0 0;font-size:1.12rem;color:var(--muted)}
+.chips{list-style:none;padding:0;margin:1.5rem 0 0;display:flex;flex-wrap:wrap;gap:.6rem}
+.chips li{padding:.38rem .9rem;border:1.5px solid var(--tan);border-radius:999px;font-weight:500;font-size:.88rem;color:var(--tan2)}
+.portrait{width:100%;max-width:320px;aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:1.5px solid var(--line);display:block}
+.hero-foot{position:absolute;left:0;right:0;bottom:1.4rem}
+.hero-foot .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--muted)}
+.hero-foot a{text-decoration:none}
+.hero-foot a:hover{color:var(--text)}
+.scroll{order:0}
+@media (max-width:700px){.hero-foot .wrap{justify-content:flex-start}.hero{padding-bottom:9rem}}
+
+/* sections */
+.sec{padding:6rem 0}
+.sec+.sec{border-top:1px solid var(--line)}
+.sec h2{margin:0;font:800 clamp(2.6rem,7vw,4.6rem)/.95 var(--display)}
+.lead{max-width:56ch;margin:1rem 0 0;color:var(--muted);font-size:1.05rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:2.25rem 0 2rem}
+.tabs button{font:600 .95rem/1 var(--body);padding:.75rem 1.25rem;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+.tabs button:hover{border-color:var(--tan)}
+.tabs button[aria-pressed="true"]{background:var(--tan);color:var(--ink);border-color:var(--tan)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.25rem}
+.card{display:block;text-align:left;padding:0;font:inherit;color:inherit;background:var(--bg2);border:1px solid var(--line);border-radius:14px;cursor:pointer;overflow:hidden}
+.card:hover{border-color:var(--tan)}
+.thumb{display:block;aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--bg3)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:24px 24px;opacity:.55}
+.cnt{position:absolute;right:.6rem;bottom:.6rem;background:var(--ink);color:var(--tan2);font-size:.75rem;font-weight:600;padding:.2rem .6rem;border-radius:999px}
+.cb{display:block;padding:1rem 1.15rem 1.2rem}
+.ct{display:block;font-weight:600;font-size:1.08rem;line-height:1.3}
+.meta{display:block;margin-top:.25rem;font-size:.85rem;color:var(--muted)}
+.ds{display:block;margin-top:.6rem;font-size:.92rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.tags i{font-style:normal;font-size:.76rem;font-weight:500;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.empty{border:1.5px dashed var(--line);padding:2.5rem 1.5rem;text-align:center;color:var(--muted);border-radius:14px}
+.tgroup{margin-bottom:2rem}
+.tgroup h3{margin:0 0 .8rem;font:800 1.6rem/1 var(--display)}
+.tl{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.tl li{padding:.55rem 1rem;border:1.5px solid var(--line);background:var(--bg2);border-radius:10px;font-weight:600;font-size:.92rem}
+
+/* forms and boxes */
+.cgrid{display:grid;gap:1.5rem;margin-top:2.5rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:860px){.cgrid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+.box{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:1.75rem}
+.box h3{margin:0 0 .5rem;font:800 1.9rem/1 var(--display)}
+.box>p{margin:0 0 1.25rem;color:var(--muted)}
+.f{display:block;margin-bottom:1rem}
+.fl{display:block;font-weight:600;font-size:.88rem;margin-bottom:.35rem}
+.fh{display:block;font-size:.8rem;color:var(--muted);margin-top:.3rem}
+input[type=text],input[type=email],input[type=password],input[type=tel],textarea,select{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:.72rem .85rem}
+input:focus,textarea:focus,select:focus{border-color:var(--tan);outline:none;box-shadow:0 0 0 3px rgba(210,180,140,.25)}
+textarea{resize:vertical;min-height:7rem}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.row{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
+.clinks{list-style:none;margin:0;padding:0}
+.clinks a{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.9rem 0;border-top:1px solid var(--line);text-decoration:none}
+.clinks li:first-child a{border-top:0;padding-top:0}
+.clinks a:hover .ck{color:var(--tan2)}
+.ck{font-weight:600}
+.cv{color:var(--muted);font-size:.9rem;overflow-wrap:anywhere;text-align:right}
+.note{font-size:.88rem;color:var(--muted);margin:0 0 1rem}
+.ok{color:var(--ok)}
+.err{color:var(--danger)}
+
+/* comments */
+.cmt-list{display:grid;gap:1rem;margin-top:1.75rem}
+.cmt{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem}
+.cmt header{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.cmt strong{font-weight:600}
+.cmt time{font-size:.8rem;color:var(--muted)}
+.cmt p{margin:.5rem 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.cmt button.im{display:block;margin-top:.8rem;padding:0;border:1px solid var(--line);border-radius:10px;background:none;cursor:zoom-in;overflow:hidden}
+.cmt button.im img{display:block;max-height:220px;max-width:100%}
+.prev{display:flex;align-items:center;gap:.8rem;margin:.6rem 0 0}
+.prev img{height:64px;border-radius:8px;border:1px solid var(--line)}
+
+footer.ft{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+footer .in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+footer a{color:var(--muted)}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:60;background:rgba(10,7,4,.82);display:grid;place-items:center;padding:1rem;overflow:auto}
+.mdl{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:16px;width:100%;max-width:1040px;max-height:calc(100dvh - 2rem);overflow:auto;display:grid;grid-template-columns:minmax(0,1fr)}
+@media (min-width:860px){.mdl{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.mdl.solo{max-width:900px;grid-template-columns:minmax(0,1fr)}
+.mclose{position:absolute;top:.7rem;right:.7rem;z-index:2;width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--tan);background:var(--bg2);color:var(--tan2);font-size:1.3rem;line-height:1;cursor:pointer}
+.mg{background:#150F0A;display:flex;flex-direction:column;min-height:280px}
+.mmain{position:relative;flex:1;display:grid;place-items:center;min-height:260px}
+.mmain img{max-width:100%;max-height:72dvh;object-fit:contain;display:block}
+.nv{position:absolute;top:50%;transform:translateY(-50%);width:2.5rem;height:2.5rem;border-radius:50%;border:0;background:var(--tan);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.nv.l{left:.6rem}.nv.r{right:.6rem}
+.mth{display:flex;gap:.5rem;padding:.6rem;overflow-x:auto}
+.mth button{flex:0 0 auto;width:68px;height:52px;padding:0;border:2px solid transparent;background:none;cursor:pointer;opacity:.6;border-radius:6px;overflow:hidden}
+.mth button[aria-current="true"]{border-color:var(--tan);opacity:1}
+.mth img{width:100%;height:100%;object-fit:cover;display:block}
+.mt{padding:1.75rem 1.5rem 2rem}
+.mt h3{margin:0;font:800 2.2rem/1 var(--display);padding-right:2rem}
+.mt .desc{margin:1rem 0 0;white-space:pre-wrap;color:var(--muted)}
+
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--tan);color:var(--ink);padding:.75rem 1.1rem;border-radius:10px;font-size:.92rem;font-weight:600;z-index:90;max-width:min(92vw,520px);text-align:center;transition:opacity .2s,transform .2s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.loading{display:grid;place-items:center;min-height:60vh;color:var(--muted)}
+
+/* admin */
+.ad-top{position:sticky;top:0;z-index:20;background:rgba(34,26,19,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.ad-top .in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:62px}
+.ad-top strong{font:800 1.6rem/1 var(--display)}
+.ad-layout{display:grid;gap:1.5rem;padding:1.5rem 0 4rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.ad-layout{grid-template-columns:200px minmax(0,1fr)}}
+.ad-nav{display:flex;gap:.4rem;overflow-x:auto}
+@media (min-width:900px){.ad-nav{flex-direction:column;position:sticky;top:80px;align-self:start}}
+.ad-nav button{flex:0 0 auto;text-align:left;font:600 .92rem/1 var(--body);padding:.75rem 1rem;border-radius:10px;border:1.5px solid transparent;background:transparent;color:var(--muted);cursor:pointer;display:flex;justify-content:space-between;gap:.6rem}
+.ad-nav button:hover{color:var(--text)}
+.ad-nav button[aria-pressed="true"]{background:var(--bg3);color:var(--tan2);border-color:var(--line)}
+.dot{background:var(--tan);color:var(--ink);border-radius:999px;font-size:.72rem;padding:.05rem .45rem;font-weight:700}
+.ad-main h3{margin:0 0 1rem;font:800 2rem/1 var(--display)}
+.login{max-width:440px;margin:4rem auto}
+.alist{list-style:none;margin:0 0 1rem;padding:0}
+.arow{display:flex;gap:.9rem;align-items:center;padding:.8rem 0;border-top:1px solid var(--line)}
+.arow:first-child{border-top:0}
+.ath{flex:0 0 64px;width:64px;height:48px;background:var(--bg3);border:1px solid var(--line);border-radius:8px;position:relative;overflow:hidden}
+.ath img{width:100%;height:100%;object-fit:cover;display:block}
+.atx{flex:1;min-width:0}
+.atx strong{display:block;font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.atx span{display:block;font-size:.8rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aacts{display:flex;gap:.3rem;flex-wrap:wrap;justify-content:flex-end}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.7rem;margin:.4rem 0 1rem}
+.th{border:1px solid var(--line);background:var(--bg);border-radius:10px;overflow:hidden}
+.th img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.th div{display:flex;gap:.3rem;padding:.35rem}
+.th .btn{flex:1;padding:.4rem .3rem;font-size:.75rem}
+.th .cov{font-size:.72rem;font-weight:700;background:var(--tan);color:var(--ink);text-align:center;padding:.15rem}
+.pv{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
+.pv img{width:84px;height:105px;object-fit:cover;border:1px solid var(--line);border-radius:10px}
+.msg{border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:1rem 1.15rem;margin-bottom:.8rem}
+.msg.unread{border-color:var(--tan)}
+.msg header{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.msg p{margin:.5rem 0 .8rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.up{cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar{animation:none}.toast{transition:none}}
+</style>
+</head>
+<body>
+<div id="app"><div class="loading">Loading...</div></div>
+<div id="modal-root"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+const SUPABASE_URL = 'https://uzceoerwpexmcxddnqlm.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6Y2VvZXJ3cGV4bWN4ZGRucWxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk5OTQwNjIsImV4cCI6MjEwNTU3MDA2Mn0.QqYrngcH-Fqi4onIwIEaA1mPwvnmfYX4Ten33mLQVhc';
+const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pubUrl = p => sb.storage.from('media').getPublicUrl(p).data.publicUrl;
+const normUrl = v => { v = String(v || '').trim(); if (!v) return ''; return /^https?:\/\//i.test(v) ? v : 'https://' + v.replace(/^\/+/, ''); };
+const shortUrl = u => String(u).replace(/^https?:\/\/(www\.)?/i, '').replace(/\/+$/, '').slice(0, 38);
+const parseTags = s => String(s || '').split(',').map(x => x.trim()).filter(Boolean).slice(0, 12);
+const fmtDate = d => { try { return new Date(d).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }); } catch (e) { return ''; } };
+
+const TABS = [['project', 'Projects'], ['design', 'Designs'], ['certificate', 'Certificates'], ['tools', 'Tools & codes']];
+const NOUN = { project: 'project', design: 'design', certificate: 'certificate' };
+const META_LABEL = { project: 'Year or location', design: 'Year or software', certificate: 'Issuer and year' };
+
+const DEFAULT_PROFILE = { name: 'Your name', line1: 'Civil', line2: 'Engineer', tagline: '', badge: '', openNote: '', firm: '', education: '', location: '', chips: [], photo: '' };
+const st = {
+  profile: { ...DEFAULT_PROFILE }, contact: {}, moderation: { auto_approve: false },
+  items: [], tools: [], comments: [],
+  tab: 'project', modal: null, lastFocus: null,
+  route: 'site', atab: 'profile', session: null, isAdmin: null, setupOpen: null, authMode: 'login',
+  editing: null, delId: null, busy: false,
+  adm: { messages: [], comments: [] },
+  commentFile: null
+};
+
+/* ---------- utilities ---------- */
+let toastTimer;
+function toast(msg) {
+  const t = $('#toast'); if (!t) return;
+  t.textContent = msg; t.classList.add('on');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 4500);
+}
+function errText(e) {
+  const m = (e && (e.message || e.error_description)) || '';
+  if (/Too many submissions/i.test(m)) return 'You have sent a few already. Please try again in an hour.';
+  if (/row-level security|violates row|permission denied/i.test(m)) return 'That action is not allowed for this account.';
+  if (/Invalid login/i.test(m)) return 'Email or password is not correct.';
+  return m || 'Something went wrong. Please try again.';
+}
+async function toBlob(file, max, q) {
+  if (!/^image\/(jpeg|png|webp|gif)$/.test(file.type)) throw new Error('Use a JPG, PNG, WebP or GIF image.');
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => rej(new Error('That image could not be read.')); i.src = url; });
+    const sc = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+    const c = document.createElement('canvas');
+    c.width = Math.max(1, Math.round(img.naturalWidth * sc)); c.height = Math.max(1, Math.round(img.naturalHeight * sc));
+    const x = c.getContext('2d'); x.fillStyle = '#ffffff'; x.fillRect(0, 0, c.width, c.height); x.drawImage(img, 0, 0, c.width, c.height);
+    return await new Promise((res, rej) => c.toBlob(b => b ? res(b) : rej(new Error('Image conversion failed.')), 'image/jpeg', q));
+  } finally { URL.revokeObjectURL(url); }
+}
+async function uploadBlob(path, blob) {
+  const { error } = await sb.storage.from('media').upload(path, blob, { contentType: 'image/jpeg', cacheControl: '31536000' });
+  if (error) throw error;
+  return path;
+}
+
+/* ---------- data (public) ---------- */
+async function loadPublic() {
+  const [s, i, t, c] = await Promise.all([
+    sb.from('site_settings').select('key,value'),
+    sb.from('items').select('*').order('sort_order', { ascending: true }).order('created_at', { ascending: true }),
+    sb.from('tools').select('*').order('sort_order', { ascending: true }),
+    sb.from('comments').select('id,name,body,image_path,created_at').eq('approved', true).order('created_at', { ascending: false }).limit(50)
+  ]);
+  if (s.error) throw s.error;
+  (s.data || []).forEach(r => {
+    if (r.key === 'profile') st.profile = { ...DEFAULT_PROFILE, ...r.value };
+    if (r.key === 'contact') st.contact = r.value || {};
+    if (r.key === 'moderation') st.moderation = r.value || { auto_approve: false };
+  });
+  st.items = i.data || []; st.tools = t.data || []; st.comments = c.data || [];
+  document.title = st.profile.name + ' | ' + st.profile.line1 + ' ' + st.profile.line2;
+}
+
+/* ---------- public rendering ---------- */
+function navHTML() {
+  return '<header class="nav"><div class="wrap in"><a class="brand" href="#top">' + esc(st.profile.name) + '</a><nav aria-label="Main"><a href="#work">Work</a><a href="#contact">Contact</a><a href="#comments">Comments</a></nav></div></header>';
+}
+function heroHTML() {
+  const p = st.profile;
+  const chips = (p.chips || []).map(c => '<li>' + esc(c) + '</li>').join('');
+  const photo = p.photo ? '<img class="portrait" src="' + esc(pubUrl(p.photo)) + '" alt="Portrait of ' + esc(p.name) + '">' : '';
+  return '<section class="hero" id="top"><div class="wrap"><div class="hero-grid' + (photo ? ' has-photo' : '') + '"><div>' +
+    (p.badge ? '<p class="badge"><b aria-hidden="true">&#10022;</b>' + esc(p.badge) + '</p>' : '') +
+    '<h1><span>' + esc(p.line1) + '</span><span>' + esc(p.line2) + '<i class="bar" aria-hidden="true"></i></span></h1>' +
+    (p.tagline ? '<p class="tag">' + esc(p.tagline) + '</p>' : '') +
+    (chips ? '<ul class="chips">' + chips + '</ul>' : '') + '</div>' + photo + '</div></div>' +
+    '<div class="hero-foot"><div class="wrap"><a href="#work">&darr; explore my work below</a><a class="scroll" href="#work">Scroll &darr;</a>' +
+    (p.openNote ? '<span>&nearr; ' + esc(p.openNote) + '</span>' : '<span></span>') + '</div></div></section>';
+}
+function cardHTML(it) {
+  const img = it.images && it.images[0];
+  const n = (it.images || []).length;
+  return '<button class="card" data-act="open-item" data-id="' + esc(it.id) + '"><span class="thumb">' +
+    (img ? '<img loading="lazy" src="' + esc(pubUrl(img)) + '" alt="' + esc(it.title) + '">' : '<span class="ph"></span>') +
+    (n > 1 ? '<span class="cnt">' + n + ' images</span>' : '') + '</span><span class="cb"><span class="ct">' + esc(it.title) + '</span>' +
+    (it.meta ? '<span class="meta">' + esc(it.meta) + '</span>' : '') +
+    (it.description ? '<span class="ds">' + esc(it.description.length > 130 ? it.description.slice(0, 130).replace(/\s+\S*$/, '') + '...' : it.description) + '</span>' : '') +
+    ((it.tags && it.tags.length) ? '<span class="tags">' + it.tags.map(t => '<i>' + esc(t) + '</i>').join('') + '</span>' : '') + '</span></button>';
+}
+function groupTools(list) {
+  const groups = [], map = {};
+  list.forEach(t => { const g = t.grp || 'Other'; if (!map[g]) { map[g] = []; groups.push(g); } map[g].push(t); });
+  return { groups, map };
+}
+function panelHTML() {
+  if (st.tab === 'tools') {
+    if (!st.tools.length) return '<div class="empty">Tools and codes will be listed here.</div>';
+    const { groups, map } = groupTools(st.tools);
+    return groups.map(g => '<div class="tgroup"><h3>' + esc(g) + '</h3><ul class="tl">' + map[g].map(t => '<li>' + esc(t.name) + '</li>').join('') + '</ul></div>').join('');
+  }
+  const list = st.items.filter(i => i.type === st.tab);
+  if (!list.length) return '<div class="empty">Nothing here yet.</div>';
+  return '<div class="grid">' + list.map(cardHTML).join('') + '</div>';
+}
+function contactLinks() {
+  const c = st.contact || {}, out = []; let u;
+  if (c.email) out.push({ k: 'Email', t: c.email, h: 'mailto:' + c.email });
+  const wa = String(c.whatsapp || '').replace(/\D/g, ''); if (wa) out.push({ k: 'WhatsApp', t: '+' + wa, h: 'https://wa.me/' + wa });
+  if (c.telegram) { u = String(c.telegram).trim(); const isUrl = /^https?:\/\//i.test(u); out.push({ k: 'Telegram', t: isUrl ? shortUrl(u) : '@' + u.replace(/^@/, ''), h: isUrl ? u : 'https://t.me/' + u.replace(/^@/, '') }); }
+  [['linkedin', 'LinkedIn'], ['instagram', 'Instagram'], ['facebook', 'Facebook'], ['youtube', 'YouTube']].forEach(p => { if (c[p[0]]) { u = normUrl(c[p[0]]); out.push({ k: p[1], t: shortUrl(u), h: u }); } });
+  return out;
+}
+function contactHTML() {
+  const links = contactLinks();
+  return '<section class="sec" id="contact"><div class="wrap"><h2>Contact Me</h2><p class="lead">Have a project in mind? Send a message and let\'s connect.</p>' +
+    '<div class="cgrid"><div class="box"><h3>Get in touch</h3><p>Reach out to collaborate on a design, discuss a site, or just say hello.</p>' +
+    '<label class="f"><span class="fl">Your name</span><input type="text" id="cf-n" maxlength="120" autocomplete="name"></label>' +
+    '<label class="f"><span class="fl">Your email, so I can reply</span><input type="email" id="cf-e" maxlength="200" autocomplete="email"></label>' +
+    '<label class="f"><span class="fl">Message</span><textarea id="cf-m" rows="5" maxlength="4000"></textarea></label>' +
+    '<div class="hp" aria-hidden="true"><input type="text" id="cf-h" tabindex="-1" autocomplete="off"></div>' +
+    '<div class="row"><button class="btn pri" data-act="send-msg" id="cf-btn">Send Message</button><span id="cf-note" class="note" style="margin:0"></span></div></div>' +
+    '<div class="box"><h3>Connect with me</h3>' + (links.length ? '<ul class="clinks">' + links.map(l => '<li><a href="' + esc(l.h) + '" target="_blank" rel="noopener"><span class="ck">' + esc(l.k) + '</span><span class="cv">' + esc(l.t) + ' &nearr;</span></a></li>').join('') + '</ul>' : '<p style="margin:0">Links will appear here.</p>') + '</div></div></div></section>';
+}
+function commentsListHTML() {
+  if (!st.comments.length) return '<div class="empty">No comments yet. Be the first to leave one.</div>';
+  return st.comments.map(c => '<article class="cmt"><header><strong>' + esc(c.name) + '</strong><time>' + esc(fmtDate(c.created_at)) + '</time></header><p>' + esc(c.body) + '</p>' +
+    (c.image_path ? '<button class="im" data-act="open-img" data-src="' + esc(pubUrl(c.image_path)) + '" aria-label="View image"><img loading="lazy" src="' + esc(pubUrl(c.image_path)) + '" alt="Image from ' + esc(c.name) + '"></button>' : '') + '</article>').join('');
+}
+function commentsHTML() {
+  return '<section class="sec" id="comments"><div class="wrap"><h2>Comments</h2><p class="lead">Leave your thoughts here.</p>' +
+    '<div class="box" style="margin-top:2rem;max-width:720px"><label class="f"><span class="fl">Your name</span><input type="text" id="cm-n" maxlength="80" autocomplete="name"></label>' +
+    '<label class="f"><span class="fl">Comment</span><textarea id="cm-b" rows="4" maxlength="1000"></textarea></label>' +
+    '<div class="hp" aria-hidden="true"><input type="text" id="cm-h" tabindex="-1" autocomplete="off"></div>' +
+    '<div id="cm-prev"></div><div class="row" style="margin-top:.4rem"><label class="btn up">Upload Image<input type="file" id="cm-f" accept="image/jpeg,image/png,image/webp,image/gif" hidden></label>' +
+    '<button class="btn pri" data-act="post-comment" id="cm-btn">Post Comment</button></div><p class="note" id="cm-note" style="margin:.8rem 0 0"></p></div>' +
+    '<div class="cmt-list" id="clist">' + commentsListHTML() + '</div></div></section>';
+}
+function footerHTML() {
+  return '<footer class="ft"><div class="wrap in"><span>&copy; ' + new Date().getFullYear() + ' ' + esc(st.profile.name) + '. All rights reserved.</span><a href="#admin">Admin</a></div></footer>';
+}
+function renderSite() {
+  $('#app').innerHTML = navHTML() + heroHTML() +
+    '<section class="sec" id="work"><div class="wrap"><h2>Portfolio Showcase</h2><p class="lead">Explore my journey through projects, designs, certifications, and technical expertise.</p>' +
+    '<div class="tabs" role="group" aria-label="Portfolio sections">' + TABS.map(t => '<button data-act="tab" data-tab="' + t[0] + '" aria-pressed="' + (st.tab === t[0]) + '">' + esc(t[1]) + '</button>').join('') + '</div><div id="panel">' + panelHTML() + '</div></div></section>' +
+    contactHTML() + commentsHTML() + footerHTML();
+}
+function renderPanel() {
+  $('#panel').innerHTML = panelHTML();
+  $$('.tabs button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tab === st.tab)));
+}
+
+/* ---------- modal ---------- */
+function renderModal() {
+  const root = $('#modal-root');
+  const m = st.modal;
+  if (!m) { root.innerHTML = ''; document.documentElement.classList.remove('lock'); return; }
+  if (m.kind === 'img') {
+    root.innerHTML = '<div class="modal" data-act="modal-bg"><div class="mdl solo" role="dialog" aria-modal="true" aria-label="Image"><button class="mclose" data-act="modal-close" aria-label="Close">&times;</button><div class="mg"><div class="mmain"><img src="' + esc(m.src) + '" alt=""></div></div></div></div>';
+  } else {
+    const it = st.items.find(x => x.id === m.id); if (!it) { st.modal = null; return renderModal(); }
+    const imgs = (it.images || []).map(pubUrl);
+    const i = Math.min(m.idx, Math.max(0, imgs.length - 1));
+    const main = imgs.length ? '<img src="' + esc(imgs[i]) + '" alt="' + esc(it.title) + (imgs.length > 1 ? ', image ' + (i + 1) + ' of ' + imgs.length : '') + '">' : '<span class="ph"></span>';
+    const nav = imgs.length > 1 ? '<button class="nv l" data-act="mprev" aria-label="Previous image">&larr;</button><button class="nv r" data-act="mnext" aria-label="Next image">&rarr;</button>' : '';
+    const th = imgs.length > 1 ? '<div class="mth">' + imgs.map((s, k) => '<button data-act="mgo" data-i="' + k + '" aria-label="Show image ' + (k + 1) + '"' + (k === i ? ' aria-current="true"' : '') + '><img src="' + esc(s) + '" alt=""></button>').join('') + '</div>' : '';
+    root.innerHTML = '<div class="modal" data-act="modal-bg"><div class="mdl" role="dialog" aria-modal="true" aria-label="' + esc(it.title) + '"><button class="mclose" data-act="modal-close" aria-label="Close">&times;</button>' +
+      '<div class="mg"><div class="mmain">' + main + nav + '</div>' + th + '</div><div class="mt"><h3>' + esc(it.title) + '</h3>' + (it.meta ? '<span class="meta">' + esc(it.meta) + '</span>' : '') +
+      (it.description ? '<p class="desc">' + esc(it.description) + '</p>' : '') + ((it.tags && it.tags.length) ? '<div class="tags">' + it.tags.map(t => '<i>' + esc(t) + '</i>').join('') + '</div>' : '') + '</div></div></div>';
+  }
+  document.documentElement.classList.add('lock');
+}
+function openModal(m) { st.lastFocus = document.activeElement; st.modal = m; renderModal(); const c = $('.mclose'); if (c) c.focus(); }
+function closeModal() { st.modal = null; renderModal(); if (st.lastFocus && st.lastFocus.focus && document.contains(st.lastFocus)) st.lastFocus.focus(); }
+function stepModal(d) {
+  const m = st.modal; if (!m || m.kind !== 'item') return;
+  const it = st.items.find(x => x.id === m.id); if (!it || !it.images || it.images.length < 2) return;
+  m.idx = (m.idx + d + it.images.length) % it.images.length; renderModal();
+}
+
+/* ---------- visitor actions ---------- */
+async function sendMessage() {
+  const n = $('#cf-n').value.trim(), e = $('#cf-e').value.trim(), m = $('#cf-m').value.trim(), note = $('#cf-note'), btn = $('#cf-btn');
+  if ($('#cf-h').value) return;
+  note.className = 'note'; note.textContent = '';
+  if (!n || !m) { note.className = 'note err'; note.textContent = 'Add your name and a message.'; return; }
+  btn.disabled = true; btn.textContent = 'Sending...';
+  const { error } = await sb.from('messages').insert({ name: n, email: e, body: m });
+  btn.disabled = false; btn.textContent = 'Send Message';
+  if (error) { note.className = 'note err'; note.textContent = errText(error); return; }
+  $('#cf-n').value = ''; $('#cf-e').value = ''; $('#cf-m').value = '';
+  note.className = 'note ok'; note.textContent = 'Message sent. Thank you.';
+}
+async function postComment() {
+  const n = $('#cm-n').value.trim(), b = $('#cm-b').value.trim(), note = $('#cm-note'), btn = $('#cm-btn');
+  if ($('#cm-h').value) return;
+  note.className = 'note'; note.textContent = '';
+  if (!n || !b) { note.className = 'note err'; note.textContent = 'Add your name and a comment.'; return; }
+  btn.disabled = true; btn.textContent = 'Posting...';
+  try {
+    let path = null;
+    if (st.commentFile) { path = await uploadBlob('comments/' + crypto.randomUUID() + '.jpg', await toBlob(st.commentFile, 1400, 0.8)); }
+    const { error } = await sb.from('comments').insert({ name: n, body: b, image_path: path });
+    if (error) throw error;
+    $('#cm-n').value = ''; $('#cm-b').value = ''; st.commentFile = null; $('#cm-prev').innerHTML = ''; $('#cm-f').value = '';
+    note.className = 'note ok';
+    note.textContent = st.moderation.auto_approve ? 'Comment posted.' : 'Thank you. Your comment will appear once it has been approved.';
+    if (st.moderation.auto_approve) { await loadPublic(); $('#clist').innerHTML = commentsListHTML(); }
+  } catch (err) { note.className = 'note err'; note.textContent = errText(err); }
+  btn.disabled = false; btn.textContent = 'Post Comment';
+}
+
+/* ---------- admin ---------- */
+async function checkAdmin() {
+  const { data } = await sb.auth.getSession();
+  st.session = data.session;
+  st.isAdmin = null;
+  if (st.session) { const r = await sb.rpc('is_admin'); st.isAdmin = r.data === true; }
+  if (!st.session) { const r = await sb.rpc('setup_is_open'); st.setupOpen = r.data === true; }
+}
+function fld(label, inner, hint) { return '<label class="f"><span class="fl">' + label + '</span>' + inner + (hint ? '<span class="fh">' + hint + '</span>' : '') + '</label>'; }
+function tin(id, val, extra) { return '<input type="text" id="' + id + '" value="' + esc(val) + '" ' + (extra || '') + '>'; }
+function adminShell(body) {
+  const badge = n => n ? ' <span class="dot">' + n + '</span>' : '';
+  const unread = st.adm.messages.filter(m => !m.is_read).length, pending = st.adm.comments.filter(c => !c.approved).length;
+  const tabs = [['profile', 'Profile'], ['project', 'Projects'], ['design', 'Designs'], ['certificate', 'Certificates'], ['tools', 'Tools'], ['links', 'Links'], ['messages', 'Messages' + badge(unread)], ['comments', 'Comments' + badge(pending)], ['account', 'Account']];
+  return '<div class="ad-top"><div class="wrap in"><strong>Site admin</strong><div class="row"><a class="btn sm" href="#top" data-act="view-site">View site</a><button class="btn sm" data-act="signout">Sign out</button></div></div></div>' +
+    '<div class="wrap ad-layout"><nav class="ad-nav" aria-label="Admin sections">' + tabs.map(t => '<button data-act="atab" data-tab="' + t[0] + '" aria-pressed="' + (st.atab === t[0]) + '">' + t[1] + '</button>').join('') + '</nav><main class="ad-main" id="adm-body">' + body + '</main></div>';
+}
+function loginHTML() {
+  if (st.authMode === 'setup') {
+    return '<div class="wrap"><div class="box login"><h3>Set up the owner account</h3><p>Use the one-time setup code you were given. This works once, then the option disappears.</p>' +
+      fld('Setup code', tin('su-code', '', 'autocomplete="off"')) + fld('Your email', '<input type="email" id="su-email" autocomplete="username">') +
+      fld('Choose a password', '<input type="password" id="su-pass" autocomplete="new-password">', 'At least 10 characters.') + fld('Repeat the password', '<input type="password" id="su-pass2" autocomplete="new-password">') +
+      '<div class="row"><button class="btn pri" data-act="setup">Create owner account</button><button class="btn" data-act="authmode" data-mode="login">Back</button></div><p class="note err" id="au-note" style="margin-top:1rem"></p></div></div>';
+  }
+  return '<div class="wrap"><div class="box login"><h3>Owner sign in</h3><p>Only the site owner can sign in here.</p>' +
+    fld('Email', '<input type="email" id="li-email" autocomplete="username">') + fld('Password', '<input type="password" id="li-pass" autocomplete="current-password">') +
+    '<div class="row"><button class="btn pri" data-act="login">Sign in</button><a class="btn" href="#top" data-act="view-site">Back to site</a></div>' +
+    (st.setupOpen ? '<p class="note" style="margin-top:1.25rem"><button class="btn sm" data-act="authmode" data-mode="setup">First time? Set up the owner account</button></p>' : '') +
+    '<p class="note err" id="au-note" style="margin-top:1rem"></p></div></div>';
+}
+async function renderAdmin() {
+  const app = $('#app');
+  if (!st.session || st.isAdmin === null) { app.innerHTML = loginHTML(); return; }
+  if (!st.isAdmin) {
+    app.innerHTML = '<div class="wrap"><div class="box login"><h3>Not the site owner</h3><p>This account does not have access to the admin. Sign out and try another account.</p><button class="btn" data-act="signout">Sign out</button></div></div>'; return;
+  }
+  await loadAdminData();
+  app.innerHTML = adminShell(adminBody());
+}
+async function loadAdminData() {
+  const [m, c, p, mod] = await Promise.all([
+    sb.from('messages').select('*').order('created_at', { ascending: false }),
+    sb.from('comments').select('*').order('created_at', { ascending: false }),
+    sb.from('items').select('*').order('sort_order', { ascending: true }).order('created_at', { ascending: true }),
+    sb.from('tools').select('*').order('sort_order', { ascending: true })
+  ]);
+  st.adm.messages = m.data || []; st.adm.comments = c.data || [];
+  st.items = p.data || []; st.tools = mod.data || [];
+}
+async function refreshAdmin() {
+  await loadAdminData();
+  const nav = $('.ad-nav');
+  $('#app').innerHTML = adminShell(adminBody());
+}
+function adminBody() {
+  switch (st.atab) {
+    case 'profile': return adminProfile();
+    case 'links': return adminLinks();
+    case 'tools': return adminTools();
+    case 'messages': return adminMessages();
+    case 'comments': return adminComments();
+    case 'account': return adminAccount();
+    default: return adminItems(st.atab);
+  }
+}
+function adminProfile() {
+  const p = st.profile;
+  return '<h3>Profile</h3><div class="pv">' + (p.photo ? '<img src="' + esc(pubUrl(p.photo)) + '" alt="">' : '') +
+    '<div><label class="btn sm up">' + (p.photo ? 'Change photo' : 'Upload your photo') + '<input type="file" id="ph-file" accept="image/jpeg,image/png,image/webp,image/gif" hidden></label> ' +
+    (p.photo ? '<button class="btn sm danger" data-act="photo-remove">Remove</button>' : '') + '<p class="fh" style="margin-top:.5rem">Shown beside the headline. Saved as soon as you choose a file.</p></div></div>' +
+    fld('Name', tin('pf-name', p.name)) + fld('Headline, line 1', tin('pf-line1', p.line1)) + fld('Headline, line 2', tin('pf-line2', p.line2)) +
+    fld('Short introduction', '<textarea id="pf-tagline" rows="4">' + esc(p.tagline) + '</textarea>') +
+    fld('Availability badge', tin('pf-badge', p.badge), 'Leave empty to hide it.') + fld('Availability note', tin('pf-openNote', p.openNote)) +
+    fld('Practice or company', tin('pf-firm', p.firm)) + fld('Education', tin('pf-education', p.education)) + fld('Based in', tin('pf-location', p.location)) +
+    fld('Skill tags under the introduction', tin('pf-chips', (p.chips || []).join(', ')), 'Separate with commas.') +
+    '<button class="btn pri" data-act="save-profile">Save profile</button>';
+}
+function adminLinks() {
+  const c = st.contact;
+  return '<h3>Contact and links</h3><p class="note">Only the fields you fill in appear on the site. Messages from the site form arrive in the Messages tab.</p>' +
+    fld('Email', tin('ct-email', c.email || '', 'inputmode="email"')) + fld('WhatsApp number', tin('ct-whatsapp', c.whatsapp || '', 'inputmode="tel"'), 'Include the country code, for example 251 followed by your number.') +
+    fld('Telegram', tin('ct-telegram', c.telegram || ''), 'Username or link.') + fld('LinkedIn', tin('ct-linkedin', c.linkedin || ''), 'Profile link.') +
+    fld('Instagram', tin('ct-instagram', c.instagram || ''), 'Profile link.') + fld('Facebook', tin('ct-facebook', c.facebook || ''), 'Profile link.') + fld('YouTube', tin('ct-youtube', c.youtube || ''), 'Channel link.') +
+    '<button class="btn pri" data-act="save-links">Save links</button>';
+}
+function adminItems(type) {
+  if (st.editing && st.editing.type === type) return adminEditor();
+  const list = st.items.filter(i => i.type === type);
+  const label = TABS.filter(t => t[0] === type)[0][1];
+  return '<h3>' + esc(label) + '</h3><p><button class="btn pri" data-act="new-item" data-type="' + type + '">Add a ' + NOUN[type] + '</button></p>' +
+    (list.length ? '<ul class="alist">' + list.map(it => '<li class="arow"><div class="ath">' + (it.images && it.images[0] ? '<img src="' + esc(pubUrl(it.images[0])) + '" alt="">' : '<span class="ph"></span>') + '</div>' +
+      '<div class="atx"><strong>' + esc(it.title) + '</strong><span>' + esc(it.meta || '') + '</span></div><div class="aacts">' +
+      '<button class="btn sm" data-act="mv" data-id="' + esc(it.id) + '" data-d="-1" aria-label="Move up">&uarr;</button><button class="btn sm" data-act="mv" data-id="' + esc(it.id) + '" data-d="1" aria-label="Move down">&darr;</button>' +
+      '<button class="btn sm" data-act="edit-item" data-id="' + esc(it.id) + '">Edit</button><button class="btn sm danger" data-act="del-item" data-id="' + esc(it.id) + '">' + (st.delId === it.id ? 'Confirm' : 'Delete') + '</button></div></li>').join('') + '</ul>' : '<p class="note">Nothing here yet.</p>');
+}
+function adminEditor() {
+  const e = st.editing, t = e.type;
+  return '<h3>' + (e.id ? 'Edit ' : 'New ') + NOUN[t] + '</h3>' + fld('Title', tin('ed-title', e.title)) + fld(META_LABEL[t], tin('ed-meta', e.meta)) +
+    fld('Description', '<textarea id="ed-desc" rows="6">' + esc(e.description) + '</textarea>') + fld('Tags', tin('ed-tags', e.tagsText), 'Separate with commas.') + '<span class="fl">Images</span>' +
+    (e.images.length ? '<div class="thumbs">' + e.images.map((im, k) => '<div class="th">' + (k === 0 ? '<div class="cov">Cover</div>' : '') + '<img src="' + esc(im.preview) + '" alt=""><div>' +
+      (k > 0 ? '<button class="btn" data-act="img-cover" data-i="' + k + '">Cover</button>' : '') + '<button class="btn danger" data-act="img-del" data-i="' + k + '">Remove</button></div></div>').join('') + '</div>' : '<p class="note">No images yet. The first image is the cover.</p>') +
+    '<p><label class="btn up">Add images<input type="file" id="ed-files" accept="image/jpeg,image/png,image/webp,image/gif" multiple hidden></label></p>' +
+    '<div class="row" style="margin-top:1.5rem"><button class="btn pri" data-act="save-item" id="ed-save">Save ' + NOUN[t] + '</button><button class="btn" data-act="cancel-item">Cancel</button></div>';
+}
+function adminTools() {
+  const { groups, map } = groupTools(st.tools);
+  return '<h3>Tools and codes</h3><div class="row" style="align-items:flex-end;margin-bottom:1.25rem"><div style="flex:1;min-width:140px"><span class="fl">Name</span><input type="text" id="tl-name" placeholder="AutoCAD"></div>' +
+    '<div style="flex:1;min-width:140px"><span class="fl">Group</span><input type="text" id="tl-group" list="tl-groups" placeholder="Software"><datalist id="tl-groups">' + groups.map(g => '<option value="' + esc(g) + '">').join('') + '</datalist></div><button class="btn pri" data-act="tool-add">Add</button></div>' +
+    groups.map(g => '<p class="fl" style="margin-top:1rem">' + esc(g) + '</p><ul class="alist">' + map[g].map(t => '<li class="arow"><div class="atx"><strong>' + esc(t.name) + '</strong></div><button class="btn sm danger" data-act="tool-del" data-id="' + esc(t.id) + '">Remove</button></li>').join('') + '</ul>').join('');
+}
+function adminMessages() {
+  const list = st.adm.messages;
+  return '<h3>Messages</h3>' + (list.length ? list.map(m => '<div class="msg' + (m.is_read ? '' : ' unread') + '"><header><strong>' + esc(m.name) + '</strong><time class="meta">' + esc(fmtDate(m.created_at)) + '</time></header>' +
+    (m.email ? '<span class="meta"><a href="mailto:' + esc(m.email) + '">' + esc(m.email) + '</a></span>' : '') + '<p>' + esc(m.body) + '</p><div class="row"><button class="btn sm" data-act="msg-read" data-id="' + esc(m.id) + '">' + (m.is_read ? 'Mark unread' : 'Mark read') + '</button>' +
+    (m.email ? '<a class="btn sm" href="mailto:' + esc(m.email) + '?subject=' + encodeURIComponent('Re: your message') + '">Reply</a>' : '') + '<button class="btn sm danger" data-act="msg-del" data-id="' + esc(m.id) + '">' + (st.delId === m.id ? 'Confirm' : 'Delete') + '</button></div></div>').join('') : '<p class="note">No messages yet.</p>');
+}
+function adminComments() {
+  const list = st.adm.comments;
+  const row = c => '<div class="msg' + (c.approved ? '' : ' unread') + '"><header><strong>' + esc(c.name) + '</strong><time class="meta">' + esc(fmtDate(c.created_at)) + '</time></header><p>' + esc(c.body) + '</p>' +
+    (c.image_path ? '<p><img src="' + esc(pubUrl(c.image_path)) + '" alt="" style="max-height:160px;border-radius:8px;border:1px solid var(--line)"></p>' : '') +
+    '<div class="row">' + (c.approved ? '<button class="btn sm" data-act="cm-approve" data-id="' + esc(c.id) + '" data-v="0">Unpublish</button>' : '<button class="btn sm pri" data-act="cm-approve" data-id="' + esc(c.id) + '" data-v="1">Approve</button>') +
+    '<button class="btn sm danger" data-act="cm-del" data-id="' + esc(c.id) + '">' + (st.delId === c.id ? 'Confirm' : 'Delete') + '</button></div></div>';
+  const pending = list.filter(c => !c.approved), live = list.filter(c => c.approved);
+  return '<h3>Comments</h3><label class="row" style="margin-bottom:1.25rem;gap:.6rem"><input type="checkbox" id="mod-auto"' + (st.moderation.auto_approve ? ' checked' : '') + '> <span>Publish new comments automatically</span></label>' +
+    '<p class="fl">Waiting for approval (' + pending.length + ')</p>' + (pending.length ? pending.map(row).join('') : '<p class="note">Nothing waiting.</p>') +
+    '<p class="fl" style="margin-top:1.5rem">Published (' + live.length + ')</p>' + (live.length ? live.map(row).join('') : '<p class="note">Nothing published yet.</p>');
+}
+function adminAccount() {
+  return '<h3>Account</h3><p class="note">Signed in as ' + esc(st.session && st.session.user ? st.session.user.email : '') + '.</p>' +
+    fld('New password', '<input type="password" id="ac-pass" autocomplete="new-password">', 'At least 10 characters.') + fld('Repeat the new password', '<input type="password" id="ac-pass2" autocomplete="new-password">') +
+    '<button class="btn pri" data-act="change-pass">Change password</button>';
+}
+async function saveSetting(key, value) {
+  const { error } = await sb.from('site_settings').upsert({ key, value, updated_at: new Date().toISOString() });
+  if (error) throw error;
+}
+const val = id => ($('#' + id) ? $('#' + id).value : '');
+
+async function adminAction(fn, okMsg) {
+  if (st.busy) return; st.busy = true;
+  try { await fn(); if (okMsg) toast(okMsg); } catch (e) { toast(errText(e)); } finally { st.busy = false; }
+}
+function startEdit(id, type) {
+  if (id) {
+    const it = st.items.find(x => x.id === id); if (!it) return;
+    st.editing = { id: it.id, type: it.type, title: it.title, meta: it.meta, description: it.description, tagsText: (it.tags || []).join(', '), originalPaths: (it.images || []).slice(), images: (it.images || []).map(p => ({ path: p, preview: pubUrl(p) })) };
+  } else {
+    st.editing = { id: null, type, title: '', meta: '', description: '', tagsText: '', originalPaths: [], images: [] };
+  }
+  st.atab = st.editing.type; $('#adm-body').innerHTML = adminBody();
+}
+function syncEditorFields() {
+  const e = st.editing; if (!e || !$('#ed-title')) return;
+  e.title = val('ed-title'); e.meta = val('ed-meta'); e.description = val('ed-desc'); e.tagsText = val('ed-tags');
+}
+async function saveItem() {
+  syncEditorFields();
+  const e = st.editing;
+  if (!e.title.trim()) { toast('Add a title first.'); return; }
+  const btn = $('#ed-save'); if (btn) { btn.disabled = true; btn.textContent = 'Saving...'; }
+  await adminAction(async () => {
+    const paths = [];
+    for (const im of e.images) {
+      if (im.path) { paths.push(im.path); continue; }
+      paths.push(await uploadBlob('portfolio/' + crypto.randomUUID() + '.jpg', im.blob));
+    }
+    const row = { type: e.type, title: e.title.trim(), meta: e.meta.trim(), description: e.description.trim(), tags: parseTags(e.tagsText), images: paths };
+    let res;
+    if (e.id) res = await sb.from('items').update(row).eq('id', e.id);
+    else { const same = st.items.filter(i => i.type === e.type); row.sort_order = same.length ? Math.max(...same.map(i => i.sort_order || 0)) + 1 : 0; res = await sb.from('items').insert(row); }
+    if (res.error) throw res.error;
+    const removed = (e.originalPaths || []).filter(p => !paths.includes(p));
+    if (removed.length) await sb.storage.from('media').remove(removed);
+    st.editing = null; await refreshAdmin();
+  }, 'Saved. It is live on your site.');
+  const b2 = $('#ed-save'); if (b2) { b2.disabled = false; b2.textContent = 'Save ' + NOUN[e.type]; }
+}
+async function moveItem(id, d) {
+  const it = st.items.find(x => x.id === id); if (!it) return;
+  const list = st.items.filter(x => x.type === it.type);
+  const pos = list.findIndex(x => x.id === id), np = pos + d;
+  if (np < 0 || np >= list.length) return;
+  const tmp = list[pos]; list[pos] = list[np]; list[np] = tmp;
+  await adminAction(async () => {
+    const ups = list.map((x, i) => x.sort_order === i ? null : sb.from('items').update({ sort_order: i }).eq('id', x.id)).filter(Boolean);
+    const rs = await Promise.all(ups); const bad = rs.find(r => r.error); if (bad) throw bad.error;
+    await refreshAdmin();
+  });
+}
+function armDelete(id, redraw) { st.delId = id; redraw(); setTimeout(() => { if (st.delId === id) { st.delId = null; if (st.route === 'admin' && st.isAdmin) $('#adm-body').innerHTML = adminBody(); } }, 4000); }
+
+document.addEventListener('click', async ev => {
+  const t = ev.target.closest('[data-act]'); if (!t) return;
+  const a = t.dataset.act, id = t.dataset.id;
+  if (a === 'modal-bg') { if (ev.target === t) closeModal(); return; }
+  switch (a) {
+    case 'tab': st.tab = t.dataset.tab; renderPanel(); break;
+    case 'open-item': openModal({ kind: 'item', id, idx: 0 }); break;
+    case 'open-img': openModal({ kind: 'img', src: t.dataset.src }); break;
+    case 'modal-close': closeModal(); break;
+    case 'mprev': stepModal(-1); break;
+    case 'mnext': stepModal(1); break;
+    case 'mgo': st.modal.idx = parseInt(t.dataset.i, 10); renderModal(); break;
+    case 'send-msg': sendMessage(); break;
+    case 'post-comment': postComment(); break;
+    case 'view-site': st.route = 'site'; break;
+    /* admin */
+    case 'authmode': st.authMode = t.dataset.mode; $('#app').innerHTML = loginHTML(); break;
+    case 'login': {
+      const note = $('#au-note'); note.textContent = '';
+      const { error } = await sb.auth.signInWithPassword({ email: val('li-email').trim(), password: val('li-pass') });
+      if (error) { note.textContent = errText(error); break; }
+      await checkAdmin(); await renderAdmin(); break;
+    }
+    case 'setup': {
+      const note = $('#au-note'); note.textContent = '';
+      if (val('su-pass') !== val('su-pass2')) { note.textContent = 'The two passwords do not match.'; break; }
+      const { error } = await sb.rpc('create_first_admin', { p_code: val('su-code').trim(), p_email: val('su-email').trim(), p_password: val('su-pass') });
+      if (error) { note.textContent = errText(error); break; }
+      const r = await sb.auth.signInWithPassword({ email: val('su-email').trim(), password: val('su-pass') });
+      if (r.error) { st.authMode = 'login'; st.setupOpen = false; $('#app').innerHTML = loginHTML(); toast('Account created. Sign in with your new password.'); break; }
+      st.authMode = 'login'; await checkAdmin(); await renderAdmin(); toast('Owner account created.'); break;
+    }
+    case 'signout': await sb.auth.signOut(); st.session = null; st.isAdmin = null; st.authMode = 'login'; await checkAdmin(); if (location.hash !== '#admin') location.hash = '#admin'; await renderAdmin(); break;
+    case 'atab': st.atab = t.dataset.tab; st.editing = null; st.delId = null; $$('.ad-nav button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tab === st.atab))); $('#adm-body').innerHTML = adminBody(); break;
+    case 'save-profile': adminAction(async () => {
+      const p = { ...st.profile, name: val('pf-name').trim(), line1: val('pf-line1').trim(), line2: val('pf-line2').trim(), tagline: val('pf-tagline').trim(), badge: val('pf-badge').trim(), openNote: val('pf-openNote').trim(), firm: val('pf-firm').trim(), education: val('pf-education').trim(), location: val('pf-location').trim(), chips: parseTags(val('pf-chips')) };
+      await saveSetting('profile', p); st.profile = p;
+    }, 'Profile saved. It is live on your site.'); break;
+    case 'photo-remove': adminAction(async () => {
+      const old = st.profile.photo; const p = { ...st.profile, photo: '' }; await saveSetting('profile', p); st.profile = p;
+      if (old) await sb.storage.from('media').remove([old]);
+      $('#adm-body').innerHTML = adminBody();
+    }, 'Photo removed.'); break;
+    case 'save-links': adminAction(async () => {
+      const c = {}; ['email', 'whatsapp', 'telegram', 'linkedin', 'instagram', 'facebook', 'youtube'].forEach(k => { c[k] = val('ct-' + k).trim(); });
+      await saveSetting('contact', c); st.contact = c;
+    }, 'Links saved. They are live on your site.'); break;
+    case 'new-item': startEdit(null, t.dataset.type); break;
+    case 'edit-item': startEdit(id); break;
+    case 'cancel-item': st.editing = null; $('#adm-body').innerHTML = adminBody(); break;
+    case 'img-del': syncEditorFields(); st.editing.images.splice(parseInt(t.dataset.i, 10), 1); $('#adm-body').innerHTML = adminBody(); break;
+    case 'img-cover': { syncEditorFields(); const k = parseInt(t.dataset.i, 10); const im = st.editing.images.splice(k, 1)[0]; st.editing.images.unshift(im); $('#adm-body').innerHTML = adminBody(); break; }
+    case 'save-item': saveItem(); break;
+    case 'mv': moveItem(id, parseInt(t.dataset.d, 10)); break;
+    case 'del-item':
+      if (st.delId === id) {
+        st.delId = null;
+        adminAction(async () => { const it = st.items.find(x => x.id === id); const r = await sb.from('items').delete().eq('id', id); if (r.error) throw r.error; if (it && it.images && it.images.length) await sb.storage.from('media').remove(it.images); await refreshAdmin(); }, 'Deleted.');
+      } else armDelete(id, () => { $('#adm-body').innerHTML = adminBody(); });
+      break;
+    case 'tool-add': adminAction(async () => {
+      const n = val('tl-name').trim(), g = val('tl-group').trim() || 'Software'; if (!n) { toast('Enter a name first.'); return; }
+      const next = st.tools.length ? Math.max(...st.tools.map(x => x.sort_order || 0)) + 1 : 0;
+      const r = await sb.from('tools').insert({ name: n, grp: g, sort_order: next }); if (r.error) throw r.error; await refreshAdmin();
+    }); break;
+    case 'tool-del': adminAction(async () => { const r = await sb.from('tools').delete().eq('id', id); if (r.error) throw r.error; await refreshAdmin(); }); break;
+    case 'msg-read': adminAction(async () => { const m = st.adm.messages.find(x => x.id === id); const r = await sb.from('messages').update({ is_read: !m.is_read }).eq('id', id); if (r.error) throw r.error; await refreshAdmin(); }); break;
+    case 'msg-del':
+      if (st.delId === id) { st.delId = null; adminAction(async () => { const r = await sb.from('messages').delete().eq('id', id); if (r.error) throw r.error; await refreshAdmin(); }, 'Deleted.'); }
+      else armDelete(id, () => { $('#adm-body').innerHTML = adminBody(); });
+      break;
+    case 'cm-approve': adminAction(async () => { const r = await sb.from('comments').update({ approved: t.dataset.v === '1' }).eq('id', id); if (r.error) throw r.error; await refreshAdmin(); }); break;
+    case 'cm-del':
+      if (st.delId === id) {
+        st.delId = null;
+        adminAction(async () => { const c = st.adm.comments.find(x => x.id === id); const r = await sb.from('comments').delete().eq('id', id); if (r.error) throw r.error; if (c && c.image_path) await sb.storage.from('media').remove([c.image_path]); await refreshAdmin(); }, 'Deleted.');
+      } else armDelete(id, () => { $('#adm-body').innerHTML = adminBody(); });
+      break;
+    case 'change-pass': adminAction(async () => {
+      const a1 = val('ac-pass'), a2 = val('ac-pass2');
+      if (a1.length < 10) { toast('Use a password with at least 10 characters.'); return; }
+      if (a1 !== a2) { toast('The two passwords do not match.'); return; }
+      const r = await sb.auth.updateUser({ password: a1 }); if (r.error) throw r.error; $('#ac-pass').value = ''; $('#ac-pass2').value = '';
+    }, 'Password changed.'); break;
+  }
+});
+document.addEventListener('change', async ev => {
+  const t = ev.target;
+  if (t.id === 'cm-f') {
+    const f = t.files && t.files[0]; st.commentFile = null; $('#cm-prev').innerHTML = '';
+    if (!f) return;
+    try { await toBlob(f, 200, 0.5); } catch (e) { toast(errText(e)); t.value = ''; return; }
+    st.commentFile = f; const u = URL.createObjectURL(f);
+    $('#cm-prev').innerHTML = '<div class="prev"><img src="' + u + '" alt="Selected image"><button class="btn sm" data-act="cm-clear">Remove</button></div>';
+  } else if (t.id === 'ed-files' && st.editing) {
+    syncEditorFields();
+    const files = Array.from(t.files || []); if (!files.length) return; toast('Processing images...');
+    for (const f of files) { try { const blob = await toBlob(f, 1800, 0.82); st.editing.images.push({ blob, preview: URL.createObjectURL(blob) }); } catch (e) { toast(errText(e)); } }
+    $('#adm-body').innerHTML = adminBody();
+  } else if (t.id === 'ph-file') {
+    const f = t.files && t.files[0]; if (!f) return;
+    adminAction(async () => {
+      const blob = await toBlob(f, 1000, 0.86); const path = await uploadBlob('portfolio/photo-' + Date.now() + '.jpg', blob);
+      const old = st.profile.photo; const p = { ...st.profile, photo: path }; await saveSetting('profile', p); st.profile = p;
+      if (old) await sb.storage.from('media').remove([old]);
+      $('#adm-body').innerHTML = adminBody();
+    }, 'Photo saved. It is live on your site.');
+  } else if (t.id === 'mod-auto') {
+    adminAction(async () => { const v = { auto_approve: t.checked }; await saveSetting('moderation', v); st.moderation = v; }, t.checked ? 'New comments will be published automatically.' : 'New comments will wait for your approval.');
+  }
+});
+document.addEventListener('click', ev => {
+  const t = ev.target.closest('[data-act="cm-clear"]'); if (!t) return;
+  st.commentFile = null; $('#cm-prev').innerHTML = ''; const f = $('#cm-f'); if (f) f.value = '';
+});
+document.addEventListener('keydown', ev => {
+  if (!st.modal) return;
+  if (ev.key === 'Escape') closeModal(); else if (ev.key === 'ArrowLeft') stepModal(-1); else if (ev.key === 'ArrowRight') stepModal(1);
+});
+
+/* ---------- routing ---------- */
+async function route() {
+  if (location.hash === '#admin') {
+    st.route = 'admin'; document.title = 'Site admin';
+    $('#app').innerHTML = '<div class="loading">Loading...</div>';
+    await checkAdmin(); await renderAdmin();
+  } else if (st.route === 'admin') {
+    st.route = 'site';
+    try { await loadPublic(); } catch (e) { /* keep the last good data */ }
+    renderSite();
+  }
+}
+window.addEventListener('hashchange', route);
+sb.auth.onAuthStateChange(() => { /* session state is re-read explicitly by checkAdmin() */ });
+
+(async function boot() {
+  if (location.hash === '#admin') { st.route = 'admin'; await route(); return; }
+  try { await loadPublic(); renderSite(); }
+  catch (e) { $('#app').innerHTML = '<div class="loading"><div style="text-align:center"><p>The portfolio could not be loaded.</p><p><button class="btn" onclick="location.reload()">Try again</button></p></div></div>'; }
+})();
+</script>
+</body>
+</html>
